@@ -11,11 +11,11 @@ public class ResponseResult {
         Request request = new Request();
         do {
             pageNum++;
-           response= request.getVideoByPage(pageNum);
+           response = request.getVideoByPage(pageNum);
            Assert.assertEquals(response.statusCode(),200);
-           result.setMore(response.jsonPath().getBoolean("more"));
+           result.setIsMore(response.jsonPath().getBoolean("more"));
            result.addHdVideosResult(response.jsonPath().<Boolean>getList("response.flags.hd"));
-        }while (result.isMore());
+        }while (result.isIsMore());
         result.setPagesVisited(pageNum);
         return result;
     }

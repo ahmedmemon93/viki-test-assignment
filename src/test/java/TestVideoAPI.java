@@ -14,7 +14,11 @@ public class TestVideoAPI {
    public void testCountOfHdVideos(){
         HdCount count;
         ResponseResult responseResult = new ResponseResult();
+        System.out.println("\nPlease wait while all the API pages are checked \n\n"+"********** Checking **************");
          count= responseResult.getResponse().getHdCount();
-         System.out.print(count.getCountFalse()+ count.getCountTrue());
+         System.out.println("\n\n*****Results******\n\n");
+         System.out.println("Total pages visited  "+Result.getPagesVisited());
+         System.out.println("Total count of Response.flags.hd  as True is "+count.getCountTrue());
+         System.out.println("Total count of Response.flags.hd  as False is "+count.getCountFalse());
     }
 }
