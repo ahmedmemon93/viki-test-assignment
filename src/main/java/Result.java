@@ -15,27 +15,43 @@ public class Result {
     /**
      * Constructor to initialize 'more' flag and list of hd flag.
      */
-    public Result(){
+    public Result() {
         setIsMore(true);
-        hd= new ArrayList<Boolean>();
+        hd = new ArrayList<Boolean>();
     }
 
     /**
      * This method is used to add the value of hd flag in the list
+     *
      * @param isHdVidoe
      */
-    public  void addHdVideosResult(List<Boolean> isHdVidoe){
+    public void addHdVideosResult(List<Boolean> isHdVidoe) {
         hd.addAll(isHdVidoe);
     }
 
+    /**
+     * get the value of isMore flag
+     *
+     * @return
+     */
     public boolean isIsMore() {
         return isMore;
     }
 
+    /**
+     * set the values of isMore flag
+     *
+     * @param isMore
+     */
     public void setIsMore(boolean isMore) {
         this.isMore = isMore;
     }
 
+    /**
+     * return the list of all hd flags in all pages.
+     *
+     * @return
+     */
     public List<Boolean> getHd() {
         return hd;
     }
@@ -44,6 +60,11 @@ public class Result {
         this.hd = hd;
     }
 
+    /**
+     * return the total pages visited
+     *
+     * @return
+     */
     public static int getPagesVisited() {
         return pagesVisited;
     }
@@ -53,18 +74,20 @@ public class Result {
     }
 
     /**
+     * This method will count the the hd element which are true
+     * and hd element which are false and will set the count in
+     * respective variables
      *
      * @return
      */
-    public  HdCount getHdCount(){
-        int countTrue=0;
-        int countFalse=0;
-        for (boolean value :hd){
-            if (value){
+    public HdCount getHdCount() {
+        int countTrue = 0;
+        int countFalse = 0;
+        for (boolean value : hd) {
+            if (value) {
                 countTrue++;
-            }
-            else countFalse++;
+            } else countFalse++;
         }
-        return new HdCount(countTrue,countFalse);
+        return new HdCount(countTrue, countFalse);
     }
 }
